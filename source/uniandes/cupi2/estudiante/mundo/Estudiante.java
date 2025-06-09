@@ -408,12 +408,23 @@ public class Estudiante
      * Método para la extensión 1.
      * @return Respuesta 1.
      */
-    public void metodo1( )
+    public String metodo1( )
     {
-        double salario= this.calcularSalario();
-        System.out.println("El estudiante " + nombre + " " + apellido + " (Código: " + codigo + ")");
-        System.out.println("con Semestre " + semestre + " y promedio " + String.format("%.2f", calcularPromedioEstudiante()) + ",");
-        System.out.println("ganaría un salario de $" + String.format("%.2f", salario) + " como monitor.");
+        double salario = this.calcularSalario();
+        
+        
+        StringBuilder mensaje = new StringBuilder();
+
+        mensaje.append("--- Información de Salario Potencial del Estudiante ---\n");
+        mensaje.append("Nombre: ").append(this.nombre).append(" ").append(this.apellido).append("\n");
+        mensaje.append("Código: ").append(this.codigo).append("\n");
+        mensaje.append("Semestre actual: ").append(this.semestre).append("\n");
+        mensaje.append("Promedio actual: ").append(String.format("%.2f", this.calcularPromedioEstudiante())).append("\n");
+        mensaje.append("-----------------------------------------------------\n");
+        mensaje.append("Salario potencial como monitor: $").append(String.format("%.2f", salario)).append("\n");
+        mensaje.append("-----------------------------------------------------");
+
+        return mensaje.toString();
     }
 
     /**
