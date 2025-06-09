@@ -104,16 +104,55 @@ public class Estudiante
     // -----------------------------------------------------------------
 
     /**
+     * Metodo MejorNota
+     *
+     * Calcula y devuelve la calificación más alta del estudiante entre sus 4 cursos.
+     * Solo considera los cursos que tienen una nota asignada.
+     * Si ningún curso tiene nota asignada, retorna -1.0.
+     * @return La nota más alta del estudiante, o -1.0 si no hay cursos calificados.
+     */
+    public double MejorNota() {
+        double mejorCalificacion = -1.0; // Inicializamos con un valor que indica que no hay notas válidas aún.
+
+        // Revisa el Curso 1
+        if (curso1.estaCalificado()) {
+            mejorCalificacion = curso1.darNota(); 
+        }
+
+        // Revisa el Curso 2
+        if (curso2.estaCalificado()) {
+            if (curso2.darNota() > mejorCalificacion) {
+                mejorCalificacion = curso2.darNota();
+            }
+        }
+
+        // Revisa el Curso 3
+        if (curso3.estaCalificado()) {
+            if (curso3.darNota() > mejorCalificacion) {
+                mejorCalificacion = curso3.darNota();
+            }
+        }
+
+        // Revisa el Curso 4
+        if (curso4.estaCalificado()) {
+            if (curso4.darNota() > mejorCalificacion) {
+                mejorCalificacion = curso4.darNota();
+            }
+        }
+
+        return mejorCalificacion; 
+    }
+    /**
      * Método de cálculo del salario
-Tarea: Crea un método llamado 'calcularSalario' en la clase Estudiante.
-Función: Este método calculará el salario que ganaría un estudiante si fuera monitor en función de su nota media y semestre.
-Reglas salariales:
-1º a 3º Semestre:
-Promedio ≥ 4.0: Salario = $25,000
-Promedio < 4.0: Salario = $15,000
-4º a 7º Semestre:
-Promedio ≥ 4.5: Salario = $35,000
-Promedio < 4.5: Salario = $25,000
+	Tarea: Crea un método llamado 'calcularSalario' en la clase Estudiante.
+	Función: Este método calculará el salario que ganaría un estudiante si fuera monitor en función de su nota media y semestre.
+	Reglas salariales:
+	1º a 3º Semestre:
+	Promedio ≥ 4.0: Salario = $25,000
+	Promedio < 4.0: Salario = $15,000
+	4º a 7º Semestre:
+	Promedio ≥ 4.5: Salario = $35,000
+	Promedio < 4.5: Salario = $25,000
 8º semestre o más: Salario = $50,000 (independientemente del promedio)
      */
     
