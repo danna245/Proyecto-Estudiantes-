@@ -369,9 +369,12 @@ Promedio < 4.5: Salario = $25,000
      * Método para la extensión 1.
      * @return Respuesta 1.
      */
-    public String metodo1( )
+    public void metodo1( )
     {
-        return "Respuesta 1";
+        double salario= this.calcularSalario();
+        System.out.println("El estudiante " + nombre + " " + apellido + " (Código: " + codigo + ")");
+        System.out.println("con Semestre " + semestre + " y promedio " + String.format("%.2f", calcularPromedioEstudiante()) + ",");
+        System.out.println("ganaría un salario de $" + String.format("%.2f", salario) + " como monitor.");
     }
 
     /**
