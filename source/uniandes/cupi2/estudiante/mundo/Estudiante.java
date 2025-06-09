@@ -34,7 +34,10 @@ public class Estudiante
     // -----------------------------------------------------------------
     // Atributos
     // -----------------------------------------------------------------
-
+    /**
+     * Semestre del estudiante
+     */
+    private int semestre;
     /**
      * Código del estudiante.
      */
@@ -88,6 +91,7 @@ public class Estudiante
     {
         nombre = "Juliana";
         apellido = "Ramírez";
+        semestre = 1; //aqui inicialice el semestre	
         codigo = 201612345;
         curso1 = new Curso( "ISIS1204", "APO1", 3, Departamento.SISTEMAS );
         curso2 = new Curso( "MATE1203", "Cálculo diferencial", 3, Departamento.MATEMATICAS );
