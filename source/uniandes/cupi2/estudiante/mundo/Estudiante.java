@@ -433,6 +433,21 @@ public class Estudiante
      */
     public String metodo2( )
     {
-        return "Respuesta 2";
+        double mejorCalificacion = this.MejorNota();
+
+        StringBuilder mensaje = new StringBuilder();
+
+        mensaje.append("--- Información de la Mejor Calificación del Estudiante ---\n");
+        mensaje.append("Nombre: ").append(this.nombre).append(" ").append(this.apellido).append("\n");
+        mensaje.append("Código: ").append(this.codigo).append("\n");
+
+        if (mejorCalificacion != -1.0) {
+            mensaje.append("La mejor calificación del estudiante es: ").append(String.format("%.2f", mejorCalificacion)).append("\n");
+        } else {
+            mensaje.append("No hay calificaciones registradas para el estudiante.\n");
+        }
+        mensaje.append("---------------------------------------------------------");
+
+        return mensaje.toString();
     }
 }
